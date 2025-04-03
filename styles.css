@@ -41,6 +41,7 @@ h1 {
   text-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
   margin-top: 25px;
   margin-bottom: 25px;
+  transition: opacity 400ms ease-in-out;
 }
 
 /* Image Styling with Smooth Fade-In */
