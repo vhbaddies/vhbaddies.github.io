@@ -3,8 +3,11 @@ let serverUrl = "https://backend-for-app-3m55.onrender.com";
 function changeImage(container1) {
     let winnerNameId = container1 ? 'name1' : 'name2';
     let loserNameId = container1  ? 'name2' : 'name1';
+
     let winnerName = document.getElementById(winnerNameId).textContent;
     let loserName = document.getElementById(loserNameId).textContent;
+
+    let winnerImgId = container1 ? 'img1' : 'img2'
     let loserImgId = container1 ? 'img2' : 'img1';
     
     fetch(`${serverUrl}/change-image?winner_name=${encodeURIComponent(winnerName)}&loser_name=${encodeURIComponent(loserName)}`)
@@ -17,17 +20,28 @@ function changeImage(container1) {
             // Replace only the loser with a new image and name
             const loserImg = document.getElementById(loserImgId);
             const loserNameElement = document.getElementById(loserNameId);
+            const winnerImg = document.getElementById(winnerImgId)
+            const winnerNameElement = document.getElementById(winnerNameId)
 
             // Fade out the current image and name, then update and fade in
+            winnerImg.style.opacity = 0;
             loserImg.style.opacity = 0;
+
+            winnerNameElement.style.opacity = 0;
             loserNameElement.style.opacity = 0;
 
             setTimeout(() => {
-                loserImg.src = data.image_url;
-                loserNameElement.textContent = data.name;
+                winnerImg.src = data.image_url2;
+                loserImg.src = data.image_url1;
+
+                winnerNameElement.textContent = data.name2;
+                loserNameElement.textContent = data.name1;
 
                 // Fade in after update
+                winnerImg.style.opacity = 1;
                 loserImg.style.opacity = 1;
+    
+                winnerNameElement.style.opacity = 1;
                 loserNameElement.style.opacity = 1;
             }, 500); // Wait for the fade-out transition to complete
         })
