@@ -172,9 +172,13 @@ img {
     gap: 10vw;
   }
 
+  .name {
+    font-size: 1.2em;
+  }
+
   .pair img {
-    height: 25vw;
-    width: 25vw;
+    height: 37vw;
+    width: 37vw;
   }
 
   .styled-table {
