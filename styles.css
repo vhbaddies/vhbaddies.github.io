@@ -171,8 +171,8 @@ img {
   padding: 0px;
   margin: 0px;
   transition: opacity 400ms ease-in-out; /* Faster fade-in animation */
-  min-width: 22ex;
-  min-height: 22ex;
+  min-width: 23ex;
+  min-height: 23ex;
   object-fit: cover;
 }
 
@@ -199,6 +199,11 @@ img {
     margin: 100px auto;
     font-size: 0.8em;
     width: 90%;
+  }
+  .styled-table td img {
+    min-width: none;
+    min-height: none;
+    margin-right: 5px;
   }
 
   .button {
