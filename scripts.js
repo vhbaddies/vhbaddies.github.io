@@ -1,13 +1,13 @@
-let serverUrl = "https://backend-for-app-3m55.onrender.com/";
+let serverUrl = "https://backend-for-app-3m55.onrender.com";
 
 function changeImage(container1) {
     let winnerImgId = container1 ? 'img1' : 'img2'
     let loserImgId = container1 ? 'img2' : 'img1';
 
-    let winnerName = document.getElementById(winnerImgId).src.split('/').pop().split('.')[0];
-    let loserName = document.getElementById(loserImgId).src.split('/').pop().split('.')[0];
+    let winnerURL = document.getElementById(winnerImgId).src
+    let loserURL = document.getElementById(loserImgId).src
     
-    fetch(`${serverUrl}/change-image?winner_name=${encodeURIComponent(winnerName)}&loser_name=${encodeURIComponent(loserName)}`)
+    fetch(`${serverUrl}/change-image?winner_url=${encodeURIComponent(winnerURL)}&loser_url=${encodeURIComponent(loserURL)}`)
         .then(response => response.json())
         .then(data => {
             if (data.error) {
