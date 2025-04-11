@@ -155,7 +155,7 @@ img {
 .styled-table td {
   padding: 10px;
   text-align: center;
-  max-height: 500px;
+  max-height: 100px;
   font-size: 1.2em;
 }
 
@@ -171,8 +171,8 @@ img {
   padding: 0px;
   margin: 0px;
   transition: opacity 400ms ease-in-out; /* Faster fade-in animation */
-  min-width: 23ex;
-  min-height: 23ex;
+  max-width: 250px;
+  max-height: 250px;
   object-fit: cover;
 }
 
