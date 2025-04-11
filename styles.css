@@ -176,15 +176,6 @@ img {
   object-fit: cover;
 }
 
-.leaderboard-img {
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-
-.leaderboard-img[style="visibility: visible;"] {
-  opacity: 1;
-}
-
 /* Mobile and Smaller Screen Adjustments */
 @media (max-width: 768px) {
   h1 {
