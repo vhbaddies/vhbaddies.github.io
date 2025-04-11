@@ -50,7 +50,7 @@ function leaderboard() {
             row.innerHTML = `
                 <td><a href="${entry.image_url}">${entry.place}</a></td>
                 <td>${entry.points}</td>
-                <td><img src="${entry.image_url}" style="max-width: 100px; max-height: 100px;"></td>
+                <td><img src="${entry.image_url}" loading="lazy" decoding="async"></td>
             `;
             tableBody.appendChild(row);
         });
