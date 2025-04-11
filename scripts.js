@@ -37,39 +37,25 @@ function changeImage(container1) {
 
 function leaderboard() {
     fetch(`${serverUrl}/leaderboard`)
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.querySelector('#leaderboard-table tbody');
+    .then(response => response.json())
+    .then(data => {
+        const tableBody = document.querySelector('#leaderboard-table tbody');
 
-            // Iterate through the leaderboard data
-            data.forEach((entry, index) => {
-                let row = tableBody.rows[index];
+        // Clear the current table rows before inserting the new ones
+        tableBody.innerHTML = '';
 
-                // If no row exists, create a new row
-                if (!row) {
-                    row = document.createElement('tr');
-                    tableBody.appendChild(row);
-                }
-
-                const img = new Image(); // Create new image object
-
-                img.onload = () => {
-                    // Once image is loaded, update the row
-                    row.innerHTML = `
-                        <td><a href="${entry.image_url}">${entry.place}</a></td>
-                        <td>${entry.points}</td>
-                        <td><img src="${entry.image_url}" class="leaderboard-img" style="visibility: hidden;"></td>
-                    `;
-
-                    // After the image is loaded, make it visible
-                    const newImg = row.querySelector('img');
-                    newImg.style.visibility = 'visible';
-                };
-
-                img.src = entry.image_url; // Start loading the image
-            });
-        })
-        .catch(error => console.error('Error fetching leaderboard:', error));
+        // Insert new rows
+        data.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><a href="${entry.image_url}">${entry.place}</a></td>
+                <td>${entry.points}</td>
+                <td><img src="${entry.image_url}"></td>
+            `;
+            tableBody.appendChild(row);
+        });
+    })
+    .catch(error => console.error('Error fetching leaderboard:', error));
 }
 
 function init() {
