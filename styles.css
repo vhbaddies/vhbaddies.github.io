@@ -171,8 +171,8 @@ img {
   padding: 0px;
   margin: 0px;
   transition: opacity 400ms ease-in-out; /* Faster fade-in animation */
-  min-width: 23ex;
-  min-height: 23ex;
+  min-width: 22ex;
+  min-height: 22ex;
   object-fit: cover;
 }
 
